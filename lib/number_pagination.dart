@@ -18,6 +18,7 @@ class NumberPagination extends StatefulWidget {
     this.iconToLast,
     this.fontSize = 15,
     this.fontFamily,
+    this.elevation = 5,
   });
 
   ///Trigger when page changed
@@ -59,6 +60,9 @@ class NumberPagination extends StatefulWidget {
   ///The fontFamily of numbers.
   final String? fontFamily;
 
+  //elevation
+  final double elevation;
+
   @override
   _NumberPaginationState createState() => _NumberPaginationState();
 }
@@ -89,7 +93,7 @@ class _NumberPaginationState extends State<NumberPagination> {
     return AbsorbPointer(
       child: TextButton(
         style: ButtonStyle(
-          elevation: MaterialStateProperty.all<double>(5.0),
+          elevation: MaterialStateProperty.all<double>(widget.elevation),
           padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
           minimumSize: MaterialStateProperty.all(Size(48, 48)),
           foregroundColor: MaterialStateProperty.all(widget.colorPrimary),
